@@ -1,5 +1,7 @@
 #20086080 Monisha Sikka 31-03-2025
 
+import random
+
 def get_user_input():
     # Prompt for User guess word
     prompt = (("\nAttempt "
@@ -11,10 +13,30 @@ def get_user_input():
               + " letter word or Q to quit: ")
     return input(prompt).upper()
 
-answer = "hello"
+def get_answer():
+    # Get random guess word answer
+    return list(random.choice(answer_list).upper())
 
 count_down = 0
 number_tries = 6
+
+# Open target file and make a list of all possible guess answers
+answer_list = []
+all_words = []
+
+target_file = open("./target_words.txt","r")
+for line in target_file:
+    answer_list.append(line.strip())
+target_file.close()
+
+valid_word_file = open("./all_words.txt","r")
+for line in valid_word_file:
+    all_words.append(line.strip().upper())
+valid_word_file.close()
+
+# Get random answer to puzzle
+answer = get_answer()
+print(answer)
 
 while count_down < number_tries :
     word = get_user_input()
