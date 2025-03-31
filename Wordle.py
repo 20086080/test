@@ -1,5 +1,6 @@
 #20086080 Monisha Sikka 31-03-2025
 
+<<<<<<< HEAD
 """This is a word game based on the logic of Wordle (A New York Times Game).
 A user is offered 6 attempts to guess a pre-selected 5 letter answer word.
 In the game, each alphabet of the guess word is checked for and scored as below
@@ -10,6 +11,8 @@ Incorrect alphabet and incorrect placement (Score 0)
 
 import random
 
+=======
+>>>>>>> 94edd29 (Feat : Get user input 6 times)
 def get_user_input():
     # Prompt for User guess word
     prompt = (("\nAttempt "
@@ -21,6 +24,7 @@ def get_user_input():
               + " letter word or Q to quit: ")
     return input(prompt).upper()
 
+<<<<<<< HEAD
 def get_answer():
     # Get random guess word answer
     return list(random.choice(answer_list).upper())
@@ -108,6 +112,12 @@ valid_word_file.close()
 # Get random answer to puzzle
 answer = get_answer()
 print(answer)
+=======
+answer = "hello"
+
+count_down = 0
+number_tries = 6
+>>>>>>> 94edd29 (Feat : Get user input 6 times)
 
 while count_down < number_tries :
     word = get_user_input()
@@ -118,6 +128,7 @@ while count_down < number_tries :
               + "\nSorry to see you go. Come back soon!!!")
         break
 
+<<<<<<< HEAD
     # If word is correctly guessed
     if answer == list(word):
         print("\nDrum Rolls!!! You have guessed the correct word "
@@ -147,3 +158,6 @@ while count_down < number_tries :
             answer = get_answer()
         else:
             break
+=======
+    count_down += 1
+>>>>>>> 94edd29 (Feat : Get user input 6 times)
