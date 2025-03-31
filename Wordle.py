@@ -135,3 +135,15 @@ while count_down < number_tries :
     if check_input(word):
         analyse_word(word, count_down)
         count_down += 1
+
+    # Check if user wants to play again if 6 attempts have been made
+    if count_down == number_tries:
+        print("\nOh no. Your number of tries is exhausted "
+                "and you have not been able to guess the correct word.\n"
+                "The correct answer is " + "".join(answer)
+                + ". Come back and try again soon.")
+        if play_again():
+            count_down = 0
+            answer = get_answer()
+        else:
+            break
