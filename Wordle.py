@@ -43,6 +43,38 @@ def check_input(guess_word):
               " letter word. Please try again.")
         return False
 
+def analyse_word(guess_word, count_down_temp):
+    # Check which alphabets in word are correct & print results
+    iteration = 0
+    current_list = [0]*(len(guess_word))
+    correct_answer = 0
+    incorrect_answer = 0
+    correct_answer_place = 0
+
+    for guess_iteration in guess_word:
+        if guess_iteration == answer[iteration]:
+            current_list[iteration] = '2'
+            correct_answer_place += 1
+        elif guess_iteration in answer:
+            current_list[iteration] = '1'
+            correct_answer += 1
+        else:
+            current_list[iteration] = '0'
+            incorrect_answer += 1
+        iteration += 1
+
+    print("\nYour results are below. You have achieved "
+          + str(correct_answer_place)
+          + " correct answer(s) '2' in results, \n"
+          + str(correct_answer)
+          + " correct letter(s) but incorrect place '1' in results,\n "
+          + str(incorrect_answer)
+          + " incorrect letter(s) '0' in results"
+          + " in your #" + str(count_down_temp + 1)
+          + " attempt.\n")
+    print(list(guess_word))
+    print(current_list)
+
 
 count_down = 0
 number_tries = 6
@@ -89,5 +121,5 @@ while count_down < number_tries :
 
     # Check guess word for validity and then each alphabet in word
     if check_input(word):
-#        analyse_word(word, count_down)
+        analyse_word(word, count_down)
         count_down += 1
