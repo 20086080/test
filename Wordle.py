@@ -17,6 +17,16 @@ def get_answer():
     # Get random guess word answer
     return list(random.choice(answer_list).upper())
 
+def play_again():
+    # Check if user wants to play again
+    new_game = ""
+    while new_game !="Y" and new_game !="N":
+            new_game = input("\nPlay again Y / N ").upper()
+            if new_game == "N" :
+                return False
+            elif new_game == "Y" :
+                return True
+
 count_down = 0
 number_tries = 6
 
