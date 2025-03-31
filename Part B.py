@@ -41,14 +41,15 @@ for line in valid_word_file:
 valid_word_file.close()
 
 #test arrange guess word, target word
-guess = all_words[0]   # guess = aahed
-target = answer_list[0]  # Target = aback
+guess = "about"
+target = answer_list[10]  # Target = about
 
 #act call score guess function to calculate score
 score_of_word = score_guess(guess, target)
 
 #Assert
+
 print("Guess : ", guess)
 print("Target : ", target)
-print("Expected Score : [2, 1, 0, 0, 0]")
+print("Expected Score : [2, 2, 2, 2, 2]")
 print("Score : ", score_of_word)
