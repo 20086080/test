@@ -1,5 +1,13 @@
 #20086080 Monisha Sikka 31-03-2025
 
+"""This is a word game based on the logic of Wordle (A New York Times Game).
+A user is offered 6 attempts to guess a pre-selected 5 letter answer word.
+In the game, each alphabet of the guess word is checked for and scored as below
+Correct alphabet and correct placement (Score 2)
+Correct alphabet though incorrect placement (Score 1)
+Incorrect alphabet and incorrect placement (Score 0)
+"""
+
 import random
 
 def get_user_input():
