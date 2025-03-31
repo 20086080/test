@@ -27,6 +27,23 @@ def play_again():
             elif new_game == "Y" :
                 return True
 
+def check_input(guess_word):
+    # Check length of word and if word in permissible list of words
+    if len(guess_word) == len(answer):
+
+        # Check against dictionary file provided
+        if guess_word in all_words:
+            return True
+        else:
+            print("Unfortunately the word you have selected does "
+                  "not match our allocated set of valid words. Please try again.")
+            return False
+    else:
+        print("Unfortunately the game needs a ",len(answer),
+              " letter word. Please try again.")
+        return False
+
+
 count_down = 0
 number_tries = 6
 
@@ -70,4 +87,7 @@ while count_down < number_tries :
         else:
             break
 
-    count_down += 1
+    # Check guess word for validity and then each alphabet in word
+    if check_input(word):
+#        analyse_word(word, count_down)
+        count_down += 1
