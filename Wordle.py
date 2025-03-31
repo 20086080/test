@@ -78,6 +78,10 @@ def analyse_word(guess_word, count_down_temp):
 
 count_down = 0
 number_tries = 6
+print("\nWelcome to this word game which is based on the "
+      "logic of Wordle (A New York Times Game). \nYou will be offered "
+      + str(number_tries) + " chances to guess a pre-selected word. "
+                                 "All the best!!\n")
 
 # Open target file and make a list of all possible guess answers
 answer_list = []
