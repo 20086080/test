@@ -36,7 +36,7 @@ for line in target_file:
 target_file.close()
 length = len(answer_list)
 print("First 5 Target Words : ", answer_list[0:5])
-print("Last 5 Target Words : ", answer_list[length-6:length-1])
+print("Last 5 Target Words : ", answer_list[length-5:length])
 
 
 valid_word_file = open("./all_words.txt","r")
@@ -45,8 +45,7 @@ for line in valid_word_file:
 valid_word_file.close()
 length = len(all_words)
 print("First 5 words from All words : ", all_words[0:5])
-print("Last 5 words from All words : ", all_words[length-6:length-1])
-
+print("Last 5 words from All words : ", all_words[length-5:length])
 #test arrange guess word, target word
 guess = "world"
 target = "hello"
