@@ -34,27 +34,21 @@ target_file = open("./target_words.txt","r")
 for line in target_file:
     answer_list.append(line.strip())
 target_file.close()
-length = len(answer_list)
-print("First 5 Target Words : ", answer_list[0:5])
-print("Last 5 Target Words : ", answer_list[length-5:length])
-
 
 valid_word_file = open("./all_words.txt","r")
 for line in valid_word_file:
     all_words.append(line.strip())
 valid_word_file.close()
-length = len(all_words)
-print("First 5 words from All words : ", all_words[0:5])
-print("Last 5 words from All words : ", all_words[length-5:length])
-#test arrange guess word, target word
-guess = "world"
-target = "hello"
 
-#act call score guess to calculate score
+#test arrange guess word, target word
+guess = all_words[0]   # guess = aahed
+target = answer_list[0]  # Target = aback
+
+#act call score guess function to calculate score
 score_of_word = score_guess(guess, target)
 
 #Assert
 print("Guess : ", guess)
 print("Target : ", target)
-print("Expected : [0 ,1 ,0 ,2 ,0]")
-print("Got : ", score_of_word)
+print("Expected Score : [2, 1, 0, 0, 0]")
+print("Score : ", score_of_word)
