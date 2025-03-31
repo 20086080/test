@@ -47,4 +47,17 @@ while count_down < number_tries :
               + "\nSorry to see you go. Come back soon!!!")
         break
 
+    # If word is correctly guessed
+    if answer == list(word):
+        print("\nDrum Rolls!!! You have guessed the correct word "
+              + word + " in " + str(count_down + 1) + " attempt(s).\n"
+                                                      "You are a champion!!!")
+        if play_again():
+            count_down = 0
+            answer = get_answer()
+            print(answer)
+            continue
+        else:
+            break
+
     count_down += 1
